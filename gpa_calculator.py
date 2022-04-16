@@ -4,7 +4,6 @@ import click
 csv_path = "./Grades/grades.csv"
 gradesAccepted = ['A', 'B', 'C', 'D', 'E', 'Pass']
 headers = ['Name','Grade','Credits']
-format_of_CSV = """The file needs to have the following format:"""
 
 
 @click.group()
@@ -38,7 +37,7 @@ def add(add, name, grade, points):
 @cli.command(name='remove')
 @click.option('-r', '--remove', is_flag=True, help="To remove the last entered grade")
 def remove(remove):
-    """Removes the last entry to the list to the list"""
+    """Removes the last entry to the list"""
     with open(csv_path, 'r') as fr:
         lines = fr.readlines()
         lines = [i  for i in lines if len(i)>2]
@@ -52,7 +51,7 @@ def remove(remove):
 @cli.command(name='show')
 @click.option('-s', '--show', is_flag=True, help="To show all grade in the list")
 def show(show):
-    """Shows current grades list"""
+    """Shows current grades in list"""
     csv_data = []
     with open(csv_path, mode='r')as file:
         csv_data += csv.reader(file)
@@ -64,8 +63,10 @@ def show(show):
 @cli.command(name='calc')
 @click.option('-c', '--calc', is_flag=True, help="To calculate your GPA")
 def calculate(calc):
-    """Calculates your current GPA"""
-
+    """Calculates your current GPA
+        It will use the data from ./Grades/grades.csv to calculate your GPA
+    """
+        
     letter_to_number_grade = {
             'A': 5,
             'B': 4,
