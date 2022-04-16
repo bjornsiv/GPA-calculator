@@ -1,4 +1,4 @@
-# gpa-cli calculator
+# GPA calculator
 
 ## Introduction
 This is a small command line GPA calculator
@@ -10,7 +10,7 @@ You will need to run the command 'pip -r requirements.txt' to install all additi
 
 ## csv structure
 
-The csv consists of 3 columns:
+The csv consists of 3 columns:<br/>
     <br/>**Name** is the Subjects Name
     <br/>**Grade** must be: 'A', 'B', 'C', 'D', 'E', 'Pass'
     <br/>**Points** is the subjects credit
