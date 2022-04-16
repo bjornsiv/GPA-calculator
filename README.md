@@ -11,18 +11,16 @@ You will need to run the command 'pip -r requirements.txt' to install all additi
 ## csv structure
 
 The csv consists of 3 columns:
-    Name is the Subjects Name
-    Grade must be: 'A', 'B', 'C', 'D', 'E', 'Pass'
-    Points is the subjects credit
+    <br/>**Name** is the Subjects Name
+    <br/>**Grade** must be: 'A', 'B', 'C', 'D', 'E', 'Pass'
+    <br/>**Points** is the subjects credit
 
 ## Commands
 
-**py .\gpa_calculator.py add** Adds a grade to the list
-**py .\gpa_calculator.py show** Shows current grades in list
-**py .\gpa_calculator.py remove** Removes the last entry to the list
-**py .\gpa_calculator.py calc** Calculates your current GPA
-
-
+**py .\gpa_calculator.py add** Adds a grade to the list <br/><br/>
+**py .\gpa_calculator.py show** Shows current grades in list <br/><br/>
+**py .\gpa_calculator.py remove** Removes the last entry to the list <br/><br/>
+**py .\gpa_calculator.py calc** Calculates your current GPA <br/><br/>
 
 ## Git tutorial (in Norwegian)
 
