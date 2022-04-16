@@ -1,6 +1,4 @@
 # GPA calculator
-
-## Introduction
 This is a small command line GPA calculator
 
 ## Python and requirements
@@ -17,10 +15,10 @@ The csv consists of 3 columns:<br/>
 
 ## Commands
 
-**py .\gpa_calculator.py add** Adds a grade to the list <br/><br/>
-**py .\gpa_calculator.py show** Shows current grades in list <br/><br/>
-**py .\gpa_calculator.py remove** Removes the last entry to the list <br/><br/>
-**py .\gpa_calculator.py calc** Calculates your current GPA <br/><br/>
+**py .\gpa_calculator.py add** - Adds a grade to the list <br/><br/>
+**py .\gpa_calculator.py show** - Shows current grades in list <br/><br/>
+**py .\gpa_calculator.py remove** - Removes the last entry to the list <br/><br/>
+**py .\gpa_calculator.py calc** - Calculates your current GPA <br/><br/>
 
 ## Git tutorial (in Norwegian)
 
