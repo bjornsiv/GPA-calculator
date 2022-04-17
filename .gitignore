@@ -1,3 +1,7 @@
+#Private shit
+/Grades/my.csv
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
