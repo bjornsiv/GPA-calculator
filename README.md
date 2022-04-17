@@ -16,11 +16,11 @@ The csv consists of 3 columns:<br/>
 ```
 ## Commands
 ```
-py .\gpa_calculator.py --help  --  Brings up the help menu in the command line<br/><br/>
-py .\gpa_calculator.py add  --  Adds a grade to the list <br/><br/>
-py .\gpa_calculator.py show  --  Shows current grades in list <br/><br/>
-py .\gpa_calculator.py remove  --  Removes the last entry to the list <br/><br/>
-py .\gpa_calculator.py calc  --  Calculates your current GPA <br/><br/>
+py .\gpa_calculator.py --help  --  Brings up the help menu in the command line
+py .\gpa_calculator.py add  --  Adds a grade to the list 
+py .\gpa_calculator.py show  --  Shows current grades in list 
+py .\gpa_calculator.py remove  --  Removes the last entry to the list 
+py .\gpa_calculator.py calc  --  Calculates your current GPA 
 ```
 ---
 
