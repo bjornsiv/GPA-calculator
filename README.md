@@ -37,7 +37,7 @@ py .\gpa_calculator.py calc  --  Calculates your current GPA
 ```
 ---
 
-If you find any mistakes/improvments, create an issue or send me an e-mail [mail](mailto:admin@sivert.me?subject=[GitHub]%13GPA-calculator)
+If you find any mistakes/improvments, create an issue or send me an [e-mail](mailto:admin@sivert.me?subject=[GitHub]%13GPA-calculator)
 
 
 
