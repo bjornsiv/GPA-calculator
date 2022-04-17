@@ -9,17 +9,23 @@ You will need to run the command 'pip -r requirements.txt' to install all additi
 ## csv structure
 
 The csv consists of 3 columns:<br/>
+```
+
     <br/>**Name** is the Subjects Name
     <br/>**Grade** must be: 'A', 'B', 'C', 'D', 'E', 'Pass'
     <br/>**Points** is the subjects credit
-
+```
 ## Commands
+```
 
 **py .\gpa_calculator.py --help** - Brings up the help menu in the command line<br/><br/>
 **py .\gpa_calculator.py add** - Adds a grade to the list <br/><br/>
 **py .\gpa_calculator.py show** - Shows current grades in list <br/><br/>
 **py .\gpa_calculator.py remove** - Removes the last entry to the list <br/><br/>
 **py .\gpa_calculator.py calc** - Calculates your current GPA <br/><br/>
+```
+
+If you find any mistakes/improvments, create an issue or send me an e-mail [mail](mailto:admin@sivert.me?subject=[GitHub]%13GPA-calculator)
 
 ## Git tutorial (in Norwegian)
 
