@@ -1,4 +1,5 @@
 import csv
+from turtle import width
 import click
 
 csv_path = "./Grades/grades.csv"
@@ -30,11 +31,10 @@ def add(add, name, grade, points):
             lines = file.readlines()
             lines = [i  for i in lines if len(i)>2]
             point_out = str(points)
-            lines.append(name + ',' + grade.capitalize() + ',' + point_out + '\n')
+            lines.append(f'{name},{grade.capitalize()},{point_out}\n')
             for line in lines[-1:]:
                 file.write(line)
         
-        file.close()
         click.echo('Successfully added {} into the list'.format(name))
     else: click.echo('The input field {} is not a accepted grade'.format(grade))
 
@@ -50,7 +50,6 @@ def remove(remove):
             for i, line in enumerate(lines):
                 if len(line) != 0 and len(lines)-1 >i:
                     fw.write(line)
-    fr.close()  
     click.echo('Successfully removed the last entry to the list')
 
 #Shows the content of the csv file
@@ -61,10 +60,10 @@ def show(show):
     csv_data = []
     with open(csv_path, mode='r')as file:
         csv_data += csv.reader(file)
+    maximum_length_arr = [row[0] for row in csv_data]
+    maximum_length = (len(max(maximum_length_arr))+10)
     for row in csv_data:
-        #print(row)
-        print('{:<15}  {:<15}  {:<20}'.format(*row))
-    file.close()
+        print('{:<{width}}  {:<15}  {:<20}'.format(*row, width=maximum_length))
 
 #Calculates the GPA based on the grades in the csv
 @cli.command(name='calc')
@@ -74,33 +73,41 @@ def calculate(calc):
         It will use the data from ./Grades/grades.csv to calculate your GPA
     """  
     letter_to_number_grade = {'A': 5,'B': 4,'C': 3,'D': 2,'E': 1}
-    sum_credits, sum_credits_x_grade, sum_credits_passed = 0, 0, 0
+    sum_credits, sum_credits_x_grade, sum_credits_passed, num_passed_subjects = 0, 0, 0, 0
     output = ''
     csv_data = []
+    alt_output = ''
 
     with open(csv_path, mode='r')as file:
         reader = csv.reader(file)
         for row in reader:
             csv_data.append(row)
-    file.close()
     for i, data in enumerate(csv_data):
         if(i>0 and len(data) > 0):
             grade = cleaner(csv_data[i][1])
             if grade.capitalize() == 'Pass':
                 sum_credits_passed += float(cleaner(csv_data[i][2]))
-                continue
-
-            grade = letter_to_number_grade[grade]
-            credits = float(cleaner(csv_data[i][2]))
-            sum_credits += credits
-            sum_credits_x_grade += (credits * grade)
-            output = f'Your GPA is: {sum_credits_x_grade / sum_credits:.2f}  with {sum_credits + sum_credits_passed:.1f} credits'
+            if grade in letter_to_number_grade:
+                #num_passed_subjects += 1
+                grade = letter_to_number_grade[grade]
+                credits = float(cleaner(csv_data[i][2]))
+                sum_credits += credits
+                sum_credits_x_grade += (credits * grade)
+            else:
+                credits = float(cleaner(csv_data[i][2]))
+                num_passed_subjects += 1
+                sum_credits += credits
+                grade = 3
+                sum_credits_x_grade += (credits * grade)
+    if num_passed_subjects/(len(csv_data)-1)>0.5:
+        alt_output = "You have over 50% subjects with the grade \'Passed\'"
+    output = f'Your GPA is: {sum_credits_x_grade / sum_credits:.2f} with {sum_credits:.1f} credits and with {num_passed_subjects:.0f} subjects with the grade "Pass", and {len(csv_data)-1} subjects passed in total. '
+    click.echo(alt_output)
     click.echo(output)
-    return output
 
 #cleaner function to strip extra ', ", \, \n from the in/out of the csv
 def cleaner(arg):
-    arg = arg.strip(' ')
+    arg = arg.strip()
     arg = arg.strip('"')
     arg = arg.strip('\'')
     arg = arg.strip("'")
