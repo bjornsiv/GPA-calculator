@@ -1,5 +1,5 @@
 # GPA calculator
-This is a small command line GPA calculator
+This is a small command line GPA calculator meant to calculate your GPA based on the 'A-E' scale, and the subjects credit. 
 
 ## Python and requirements
 This project is written with Python 3.10.4, but it will probably work with other versions as well.
@@ -14,6 +14,19 @@ The csv consists of 3 columns:<br/>
     Grade  --  must be: 'A', 'B', 'C', 'D', 'E', 'Pass'
     Points  --  is the subjects credit
 ```
+
+**An example of grades.csv:**
+```
+Name,Grade,Points
+Matte,B,7.5
+Norsk,C,10
+Gym,Pass,10
+Naturfag,E,10
+Religion,B,7.5
+Historie,A,7.5
+```
+
+
 ## Commands
 ```
 py .\gpa_calculator.py --help  --  Brings up the help menu in the command line
@@ -25,6 +38,9 @@ py .\gpa_calculator.py calc  --  Calculates your current GPA
 ---
 
 If you find any mistakes/improvments, create an issue or send me an e-mail [mail](mailto:admin@sivert.me?subject=[GitHub]%13GPA-calculator)
+
+
+
 
 ## Git tutorial (in Norwegian)
 
@@ -45,9 +61,6 @@ Merk at en bør være i riktig branch før en begynner å gjøre endringer. Dett
 
 
 'git add .' legger alle filene med endringer i en pakke som skal sendes til Git 
-
-
-'git stage .' fryser filene som er lagt i pakken
 
 
 'git commit -m "my-message"' ferdigstiller pakken. Bytt ut "my-message" med en beskrivende kommentar som forklarer hva som er gjort av endringer
